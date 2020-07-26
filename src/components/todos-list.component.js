@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-const sound = require('../SoundexNameMatch.js');
+const sound = require('../Soundex.js');
+const match = require('../Namematch');
 
 export default class EditTodo extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: '',s: ''};
+        this.state = {value: '',s: '',m: '',n: '',o: ''};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,6 +19,9 @@ export default class EditTodo extends Component {
       handleSubmit(event) {
           var name = this.state.value;
           this.setState({s: sound(name)});
+          this.setState({m: match.soundexnamematch(name)});
+          this.setState({n: match.sindexnamematch(name)});
+          this.setState({o: match.sindexcode(name)});
           event.preventDefault();
       }
     render() {
@@ -37,7 +41,12 @@ export default class EditTodo extends Component {
           <br>
           </br>
           <input type="submit" value="Submit" class="btn btn-success"/>
-          <p>Code is: {this.state.s}</p>
+          <br>
+          </br>
+          <p>Irish Soundex: {this.state.s}</p>
+          <p>Matched Names(soundex): {this.state.m}</p>
+          <p>Sindex: {this.state.o}</p>
+          <p>Matched Names(sindex): {this.state.n}</p>
       </form>
         )
     }
