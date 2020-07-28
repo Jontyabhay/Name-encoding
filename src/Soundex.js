@@ -1,7 +1,7 @@
 function soundex(string)
 {
-    let s = [];
-    let si = 1;
+    let sou = [];
+    let soui = 1;
     let c;
     let f;
 
@@ -9,8 +9,8 @@ function soundex(string)
     let address = "01230120022455012623010202";
     if(typeof string[0] === 'string')
     {
-        s[0] = string[0].toUpperCase();
-        f = s[0].charCodeAt(0)-65;
+        sou[0] = string[0].toUpperCase();
+        f = sou[0].charCodeAt(0)-65;
     }
     
     for(let i = 1, l = string.length; i < l; i++)
@@ -21,20 +21,20 @@ function soundex(string)
         {
             if(address[c] !== '0')
             {
-                if(address[c] !== s[si-1])
+                if(address[c] !== sou[soui-1])
                     {
-                        s[si] = address[c];
-                        if (address[f] === s[1])
+                        sou[soui] = address[c];
+                        if (address[f] === sou[1])
                         {
-                            s.pop();
+                            sou.pop();
                         }
-                        else if (address[f] !== s[1])
+                        else if (address[f] !== sou[1])
                         {
-                           si = si + 1;
+                           soui = soui + 1;
                         }
                     }
    
-                if(si > 3)
+                if(soui > 3)
                 {
                     break;
                 }
@@ -43,16 +43,16 @@ function soundex(string)
     }
 
 
-    if (si <= 3)
+    if (soui <= 3)
     {
-        while(si <= 3)
+        while(soui <= 3)
         {
-            s[si] = 0;
-            si = si + 1;
+            sou[soui] = 0;
+            soui = soui + 1;
         }
     }
 
-    return s.join("");
+    return sou.join("");
 }
 
 module.exports = soundex;
