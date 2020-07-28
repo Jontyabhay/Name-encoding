@@ -5,7 +5,7 @@ const match = require('../Namematch');
 export default class EditTodo extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: '',s: '',m: '',n: '',o: ''};
+        this.state = {value: '',value1: '',s: '',m: '',n: '',o: ''};
     
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -14,14 +14,16 @@ export default class EditTodo extends Component {
     
       handleChange(event) {
         this.setState({value: event.target.value});
+        this.setState({value1: event.target.value1});
       }
     
       handleSubmit(event) {
-          var name = this.state.value;
-          this.setState({s: sound(name)});
-          this.setState({m: match.soundexnamematch(name)});
-          this.setState({n: match.sindexnamematch(name)});
-          this.setState({o: match.sindexcode(name)});
+          var surname = this.state.value;
+          var firstname = this.state.value1;
+          this.setState({s: sound(surname)});
+          this.setState({m: match.soundexnamematch(surname)});
+          this.setState({n: match.sindexnamematch(surname)});
+          this.setState({o: match.sindexcode(surname)});
           event.preventDefault();
       }
     render() {
@@ -37,6 +39,12 @@ export default class EditTodo extends Component {
           <br>
           </br>
           <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <br>
+          </br>
+          Firstname
+          <br>
+          </br>
+          <input type="text" value={this.state.value1} onChange={this.handleChange} />
         </label>
           <br>
           </br>

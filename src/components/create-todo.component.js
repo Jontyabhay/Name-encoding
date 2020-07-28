@@ -6,7 +6,7 @@ export default class EditTodo extends Component {
         super(props);
         this.state = {value: '',s: ''};
     
-        this.handleChange = this.handleChange.bind(this); 
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
     
