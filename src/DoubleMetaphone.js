@@ -28,7 +28,7 @@ function double_metaphone( string )
 
     // main loop
 
-    while (primary.length < 4) {
+    while (primary.length < 4) {  //limits the code to 4 character
       if (current >= length)
         break;
 
@@ -47,7 +47,7 @@ function double_metaphone( string )
           break;
 
         case 'B':
-          // '-mb', e.g. "dumb", already skipped over ...
+          // '-mb'
           primary   += 'B';
 
           if (original.substr(current + 1, 1) === 'B')
