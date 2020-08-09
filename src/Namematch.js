@@ -19,76 +19,41 @@ function soundexnamematch(str)
     return namearr.join(", ");
 }
 
-function sindexnamematch(str)
+
+function nindex(str1, str2)
 {
-    let namearr = [];
-    let namesindex;
-    for (let i=0;i<surnamearr.length;i++)
+    let nin = 0;
+    let fin = 0;
+    let sin = 0;
+    for (let i=0;i<firstnamearr.length;i++)
     {
-        if (str === surnamearr[i].Surname.toLowerCase())
+        if (str1 === firstnamearr[i].Shortname.toLowerCase())
         {
-            namesindex = surnamearr[i].Ref1;
+              fin = firstnamearr[i].Ref;
         }
     }
     for (let k=0;k<surnamearr.length;k++)
     {
-        if (namesindex === surnamearr[k].Ref1)
+        if (str2 === surnamearr[k].Surname.toLowerCase())
         {
-            if (str !== surnamearr[k].Surname.toLowerCase())
-            {
-                namearr.push(surnamearr[k].Surname);
-            }
+            sin = surnamearr[k].Ref1;
         }
     }
-    return namearr.join(", ");
+    nin = (sin * 1000) + fin;
+    return nin; 
 }
 
-function sindexcode(str)
+function foundex(str1,str2)
 {
-    for (let i=0;i<surnamearr.length;i++)
+    let found = []
+    for (let l=0;l<firstnamearr.length;l++)
     {
-        if (str === surnamearr[i].Surname.toLowerCase())
+        if (str1 === firstnamearr[l].Shortname.toLowerCase())
         {
-            return surnamearr[i].Ref1;
+            found.push(firstnamearr[l].Ref);
+            found.push(sonu(str2));
         }
     }
+    return found.join("");
 }
-
-function findexcode(str)
-{
-    for (let i=0;i<firstnamearr.length;i++)
-    {
-        if (str === firstnamearr[i].Shortname.toLowerCase())
-        {
-            return firstnamearr[i].Ref;
-        }
-    }
-}
-
-function findexnamematch(str)
-{
-    let namearr = [];
-    let namesindex;
-    for (let i=0;i<firstnamearr.length;i++)
-    {
-        if (str === firstnamearr[i].Shortname.toLowerCase())
-        {
-            namesindex = firstnamearr[i].Ref;
-        }
-    }
-    for (let k=0;k<firstnamearr.length;k++)
-    {
-        if (namesindex === firstnamearr[k].Ref)
-        {
-            if (str !== firstnamearr[k].Shortname.toLowerCase())
-            {
-                namearr.push(firstnamearr[k].Shortname);
-            }
-        }
-    }
-    return namearr.join(", ");
-}
-
-module.exports = {soundexnamematch,sindexnamematch
-                ,sindexcode,findexcode,
-                 findexnamematch};
+module.exports = {soundexnamematch,nindex,foundex};

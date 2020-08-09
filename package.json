@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^4.5.2",
     "csv": "^5.3.2",
     "fs": "0.0.1-security",
     "react": "^16.13.1",
@@ -14,9 +14,9 @@
     "react-excel-renderer": "^1.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "read-excel-file": "^4.0.6",
+    "read-excel-file": "^4.0.7",
     "spread_sheet": "^2.2.1",
-    "xlsx": "^0.16.4"
+    "xlsx": "^0.16.5"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -23,6 +23,8 @@ export default class EditTodo extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
         <label>
+          <br>
+          </br>
           Double Metaphone Encoding
           <br>
           </br>

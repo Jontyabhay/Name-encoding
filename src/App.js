@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import CreateTodo from "./components/create-todo.component";
-import EditTodo from "./components/edit-todo.component";
-import TodosList from "./components/todos-list.component";
+import CreateTodo from "./components/double-metaphone.component";
+import EditTodo from "./components/lookup-table.component";
+import TodosList from "./components/soundex.component";
+import NewTodo from "./components/findex-metaphone.component";
 
 import logo from "./Soundex.jpg";
 
@@ -27,6 +28,9 @@ class App extends Component {
                 <li className="navbar-item">
                   <Link to="/create" className="nav-link">Double Metaphone</Link>
                 </li>
+                <li className="navbar-item">
+                  <Link to="/add" className="nav-link">Findex Metaphone</Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -34,6 +38,7 @@ class App extends Component {
           <Route path = "/intro" exact component={EditTodo} />
           <Route path="/" exact component={TodosList} />
           <Route path="/create" component={CreateTodo} />
+          <Route path="/add" exact component={NewTodo} />
         </div>
       </Router>
     );
