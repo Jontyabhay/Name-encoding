@@ -21,7 +21,6 @@ export default class EditTodo extends Component {
       }
     
       renderFile = (fileObj) => {
-          //just pass the fileObj as parameter
           ExcelRenderer(fileObj, (err, resp) => {
             if(err){
               console.log(err);            
@@ -42,8 +41,7 @@ export default class EditTodo extends Component {
           let fileName = fileObj.name;
     
           
-          //check for file extension and pass only if it is .xlsx and display error message otherwise
-          if(fileName.slice(fileName.lastIndexOf('.')+1) === "xlsx"){
+          if(fileName.slice(fileName.lastIndexOf('.')+1) === "xlsx" || "csv" || "xlsm"){
             this.setState({
               uploadedFileName: fileName,
               isFormInvalid: false
@@ -79,13 +77,13 @@ export default class EditTodo extends Component {
           <div>
             <div>
               <Jumbotron className="jumbotron-background">          
-                  <h3 className="display-5">Look up Table Records</h3>  
+                  <h3 className="display-">Look up Table Records</h3>  
               </Jumbotron>
             </div>
             <Container>
             <form>
               <FormGroup row>
-                <Label for="exampleFile" xs={6} sm={4} lg={2} size="lg">Upload</Label>          
+                <Label for="exampleFile" xs={6} sm={4} lg={2} size="lg">Upload File</Label>          
                 <Col xs={4} sm={8} lg={10}>                                                     
                   <InputGroup>
                     <InputGroupAddon addonType="prepend">
@@ -95,7 +93,7 @@ export default class EditTodo extends Component {
                     <Input type="text" className="form-control" value={this.state.uploadedFileName} readOnly invalid={this.state.isFormInvalid} />                                              
                     <FormFeedback>    
                       <Fade in={this.state.isFormInvalid} tag="h6" style={{fontStyle: "italic"}}>
-                        Please select a .xlsx file only !
+                        Please select spreadhseet file forma only!
                       </Fade>                                                                
                     </FormFeedback>
                   </InputGroup>     

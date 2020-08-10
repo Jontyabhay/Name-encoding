@@ -9,8 +9,19 @@ function soundex(string)
     let address = "01230120022455012623010202";
     if(typeof string[0] === 'string') //Checks if First character is a string
     {
-        sou[0] = string[0].toUpperCase(); //Take first letter of string
+        if (string[0] === 'c' || string[0] === 'C')
+        {
+            sou[0] = 'K';
+        }
+        else
+        {
+            sou[0] = string[0].toUpperCase();
+        }
     }
+        if (string[0].toUpperCase() === 'MAC' || string[0].toUpperCase() === "M'" || string[0].toUpperCase() === 'MC')
+        {
+            sou[0] = string[1].toUpperCase();
+        }
     for(let i = 1, l = string.length; i < l; i++)
     {
         c = (string[i].toUpperCase()).charCodeAt(0) - 65;
