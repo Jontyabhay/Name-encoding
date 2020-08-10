@@ -12,17 +12,13 @@ function double_metaphone( string )
     let original = string + "     ";
 
     original = original.toUpperCase();
-
-    // skip this at beginning of word
     
     if (string_at(original, 0, 2, 
                         ['GN', 'KN', 'PN', 'WR', 'PS']))
       current++;
-
-    // Initial 'X' is pronounced 'Z' e.g. 'Xavier'
     
     if (original.substr(0, 1) === 'X') {
-      primary   += "S";   // 'Z' maps to 'S'
+      primary   += "S";
       current++;
     }
 
