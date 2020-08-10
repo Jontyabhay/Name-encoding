@@ -10,4 +10,4 @@ function string_at(string, start, length, list)
     return 0;
   }
 
-  export {string_at};
+  module.exports = string_at;

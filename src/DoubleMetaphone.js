@@ -1,6 +1,6 @@
-import {Slavo_Germanic} from './germanic';
-import {is_vowel} from './vowelcheck';
-import {string_at}  from './stringposition';
+const Slavo_Germanic = require('./germanic');
+const is_vowel = require('./vowelcheck');
+const string_at = require('./stringposition');
 
 function double_metaphone( string )
 {
@@ -832,7 +832,7 @@ function double_metaphone( string )
     
   } // end of function MetaPhone
   
-  export {double_metaphone};
+  module.exports = double_metaphone;
   
 /*=================================================================*\
   # Name:   string_at(string, start, length, list)

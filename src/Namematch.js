@@ -1,6 +1,7 @@
 const sonu = require('./Soundex');
 const surnamearr = require('./input');
 const firstnamearr = require('./input1.js');
+const meta = require('./DoubleMetaphone');
 
 function soundexnamematch(str)
 {
@@ -56,4 +57,18 @@ function foundex(str1,str2)
     }
     return found.join("");
 }
-module.exports = {soundexnamematch,nindex,foundex};
+
+function findexmetaphone(str1,str2)
+{
+    let finone = [];
+    for (let x=0;x<firstnamearr.length;x++)
+    {
+        if (str1 === firstnamearr[x].Shortname.toLowerCase())
+        {
+            finone.push(firstnamearr[x].Ref);
+            finone.push(meta(str2));
+        }
+    }
+    return finone.join("");
+}
+module.exports = {soundexnamematch,nindex,foundex,findexmetaphone};

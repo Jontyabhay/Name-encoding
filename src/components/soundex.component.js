@@ -30,7 +30,7 @@ export default class EditTodo extends Component {
       <label>
         <br>
         </br>
-        Soundex Encoding
+        <b>Soundex Encoding</b>
         <br>
         </br>
         <br>

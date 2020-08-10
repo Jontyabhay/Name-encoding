@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {double_metaphone} from '../DoubleMetaphone';
+const double_metaphone = require('../DoubleMetaphone');
 
 export default class EditTodo extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ export default class EditTodo extends Component {
         <label>
           <br>
           </br>
-          Double Metaphone Encoding
+          <b>Double Metaphone Encoding</b>
           <br>
           </br>
           <br>
@@ -38,7 +38,7 @@ export default class EditTodo extends Component {
         <br>
         </br>
         <input type="submit" value="Submit" class="btn btn-primary"/>
-        <p>Code is: {this.state.s}</p>
+        <p>Code: {this.state.s}</p>
       </form>
         )
         
