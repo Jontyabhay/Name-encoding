@@ -27,7 +27,7 @@ export default class EditTodo extends Component {
                       <h3>Welcome to Findex Metaphone</h3>
                       <br>
                       </br>
-                      <p>Findex Metahone is a new encoding in our project which return
+                      <p>Findex Metaphone is a new encoding in our project which return
                           a combination of FIndex and Double Metaphone, similar to
                           Foundex
                       </p>

@@ -68,7 +68,7 @@ export default class EditTodo extends Component {
       }
     
       openNewPage = (chosenItem) => {
-        const url = chosenItem === "github" ? "https://github.com/ashishd751/react-excel-renderer" : "https://medium.com/@ashishd751/render-and-display-excel-sheets-on-webpage-using-react-js-af785a5db6a7";
+        const url = chosenItem === "github"
         window.open(url, '_blank');
       }
     
