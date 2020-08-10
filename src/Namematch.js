@@ -74,15 +74,46 @@ function findexmetaphone(str1,str2)
 
 function nindexmatch(str1,str2)
 {
+    let fx = 0;
+    let sx = 0;
+    let farr =[];
+    let sarr =[];
     let newarr = [];
-    for (let y=0;y<firstnamearr.length;y++)
+    for (let i=0;i<firstnamearr.length;i++)
     {
-        for (let z=0;z<surnamearr.length;z++)
+        if (str1 === firstnamearr[i].Shortname.toLowerCase())
         {
-            if (nindex(str1,str2) === nindex(firstnamearr[y].Shortname,surnamearr[z].Surname))
-            {
-                newarr.push(firstnamearr[y].Shortname+' '+surnamearr[z].Surname);
-            }
+            fx = firstnamearr[i].Ref;
+            break;
+        }
+    }
+    for (let j=0;j<surnamearr.length;j++)
+    {
+        if (str2 === surnamearr[j].Surname.toLowerCase())
+        {
+            sx = surnamearr[j].Ref1;
+            break;
+        }
+    }
+    for (let k=0;k<firstnamearr.length;k++)
+    {
+        if (fx === firstnamearr[k].Ref)
+        {
+            farr.push(firstnamearr[k].Shortname);
+        }
+    }
+    for (let l=0;l<surnamearr.length;l++)
+    {
+        if (sx === surnamearr[l].Ref1)
+        {
+            sarr.push(surnamearr[l].Surname);
+        }
+    }
+    for (let a=0;a<farr.length;a++)
+    {
+        for (let b=0;b<sarr.length;b++)
+        {
+          newarr.push(farr[a]+' '+sarr[b]);
         }
     }
     return newarr.join(", ");
