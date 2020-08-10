@@ -5,7 +5,7 @@ const match = require('../Namematch');
 export default class EditTodo extends Component {
   constructor(props) {
       super(props);
-      this.state = {first: '',s: '',second: '',n: '',f: '',m: ''};
+      this.state = {first: '',s: '',second: '',n: '',f: '',m: '',na: ''};
   
       this.handleChange = this.handleChange.bind(this);
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,6 +22,7 @@ export default class EditTodo extends Component {
         this.setState({m: match.soundexnamematch(sname)});
         this.setState({n: match.nindex(fname,sname)});
         this.setState({f: match.foundex(fname,sname)});
+        this.setState({na: match.nindexmatch(fname,sname)});
         event.preventDefault();
     } 
   render() {

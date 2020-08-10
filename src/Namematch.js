@@ -71,4 +71,20 @@ function findexmetaphone(str1,str2)
     }
     return finone.join("");
 }
-module.exports = {soundexnamematch,nindex,foundex,findexmetaphone};
+
+function nindexmatch(str1,str2)
+{
+    let newarr = [];
+    for (let y=0;y<firstnamearr.length;y++)
+    {
+        for (let z=0;z<surnamearr.length;z++)
+        {
+            if (nindex(str1,str2) === nindex(firstnamearr[y].Shortname,surnamearr[z].Surname))
+            {
+                newarr.push(firstnamearr[y].Shortname+' '+surnamearr[z].Surname);
+            }
+        }
+    }
+    return newarr.join(", ");
+}
+module.exports = {soundexnamematch,nindex,foundex,findexmetaphone,nindexmatch};
